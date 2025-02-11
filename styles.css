@@ -38,7 +38,7 @@ nav {
 }
 
 .logo-img {
-    width: 200px; /* Set a fixed width */
+    width: 100px; /* Set a fixed width */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Ensure the image doesn't exceed the parent element's width */
 }
@@ -61,6 +61,22 @@ nav {
 
 .nav-links a:hover {
     color: #4a90e2;
+}
+
+.header-cta-button {
+    padding: 0.75rem 1.5rem; /* Vergroot de button */
+    background: #4a90e2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.header-cta-button:hover {
+    background: #357abd;
 }
 
 .contact-number {
@@ -419,16 +435,4 @@ footer {
     }
     
     .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .stats {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-}
+        grid-template-columns:
