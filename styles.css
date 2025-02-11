@@ -1,4 +1,16 @@
 /* Reset and base styles */
+:root {
+    --primary-color: #4a90e2;
+    --primary-color-dark: #357abd;
+    --secondary-color: #2d3748;
+    --text-color: #1a1a1a;
+    --background-color: #f8fafc;
+    --white-color: #fff;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --font-family: 'Poppins', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,20 +18,30 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-family);
     line-height: 1.6;
-    color: #1a1a1a;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 /* Navigation */
 header {
     background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--box-shadow);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    height: 80px; /* Vaste hoogte voor de header */
+    height: 80px;
+    background-image: url('afbeeldingen/header-image.jpg'); /* Add the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    background-size: contain; /* Scale the image to fit */
 }
 
 nav {
@@ -27,9 +49,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 5%;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
 .logo {
@@ -38,9 +57,9 @@ nav {
 }
 
 .logo-img {
-    width: 200px; /* Set a fixed width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure the image doesn't exceed the parent element's width */
+    width: 100px;
+    height: auto;
+    max-width: 100%;
 }
 
 .nav-links {
@@ -53,22 +72,23 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #2d3748;
+    color: var(--secondary-color);
     font-weight: 500;
     transition: color 0.3s ease;
     padding: 0.5rem 0;
 }
 
 .nav-links a:hover {
-    color: #4a90e2;
+    color: var(--primary-color);
 }
 
 .header-cta-button {
-    padding: 0.75rem 2.0rem; /* Vergroot de button */
-    background: #4a90e2;
-    color: white;
+    padding: 1rem 2rem; /* Increased padding */
+    font-size: 1.2rem; /* Increased font size */
+    background: var(--primary-color);
+    color: var(--white-color);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-weight: 500;
     transition: all 0.3s ease;
     border: none;
@@ -76,32 +96,31 @@ nav {
 }
 
 .header-cta-button:hover {
-    background: #357abd;
+    background: var(--primary-color-dark);
 }
 
 .contact-number {
     font-size: 1.25rem;
-    color: #4a90e2;
+    color: var(--primary-color);
     font-weight: 600;
 }
 
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+    background: linear-gradient(135deg, #1a365d 0%, var(--secondary-color) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 1rem;
-    margin-top: 80px; /* Voegt ruimte toe onder de header */
+    margin-top: 80px;
 }
 
 .hero-content {
-    color: white;
-    max-width: 900px;
+    color: var(--white-color);
     padding: 2rem;
-    margin-top: -80px; /* Compenseert voor de header spacing */
+    margin-top: -80px;
 }
 
 .hero-content h1 {
@@ -126,11 +145,11 @@ nav {
 /* Buttons */
 .cta-button {
     display: inline-block;
-    padding: 1.5rem 3rem; /* Vergroot de button */
-    background: #4a90e2;
-    color: white;
+    padding: 1.5rem 3rem;
+    background: var(--primary-color);
+    color: var(--white-color);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-weight: 500;
     transition: all 0.3s ease;
     border: none;
@@ -138,7 +157,7 @@ nav {
 }
 
 .cta-button:hover {
-    background: #357abd;
+    background: var(--primary-color-dark);
     transform: translateY(-2px);
 }
 
@@ -146,11 +165,11 @@ nav {
     display: inline-block;
     padding: 1.25rem 2.5rem;
     background: transparent;
-    color: white;
+    color: var(--white-color);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     font-weight: 500;
-    border: 2px solid white;
+    border: 2px solid var(--white-color);
     transition: all 0.3s ease;
 }
 
@@ -161,30 +180,29 @@ nav {
 /* Services Section */
 .services {
     padding: 8rem 2rem;
-    background: #f8fafc;
+    background: var(--background-color);
 }
 
 .services h2 {
     text-align: center;
     margin-bottom: 4rem;
     font-size: 2.5rem;
-    color: #2d3748;
+    color: var(--secondary-color);
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
-    max-width: 1400px;
     margin: 0 auto;
 }
 
 .service-card {
-    background: white;
+    background: var(--white-color);
     padding: 3rem 2rem;
     border-radius: 15px;
     text-align: left;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
@@ -194,14 +212,14 @@ nav {
 
 .service-card i {
     font-size: 2.5rem;
-    color: #4a90e2;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #2d3748;
+    color: var(--secondary-color);
 }
 
 .service-card ul {
@@ -217,7 +235,7 @@ nav {
 
 .service-card ul li:before {
     content: "•";
-    color: #4a90e2;
+    color: var(--primary-color);
     position: absolute;
     left: 0;
 }
@@ -225,11 +243,10 @@ nav {
 /* About Section */
 .about {
     padding: 8rem 2rem;
-    background: white;
+    background: var(--white-color);
 }
 
 .about-content {
-    max-width: 1400px;
     margin: 0 auto;
     text-align: center;
 }
@@ -248,7 +265,7 @@ nav {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #4a90e2;
+    color: var(--primary-color);
     display: block;
 }
 
@@ -260,7 +277,7 @@ nav {
 /* Portfolio Section */
 .portfolio {
     padding: 8rem 2rem;
-    background: #f8fafc;
+    background: var(--background-color);
 }
 
 .portfolio h2 {
@@ -273,7 +290,6 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -296,9 +312,9 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     padding: 2rem;
-    color: white;
+    color: var(--white-color);
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
@@ -314,7 +330,7 @@ nav {
 /* Contact Section */
 .contact {
     padding: 8rem 2rem;
-    background: white;
+    background: var(--white-color);
 }
 
 .contact h2 {
@@ -327,7 +343,6 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -347,7 +362,7 @@ nav {
 }
 
 .contact-item i {
-    color: #4a90e2;
+    color: var(--primary-color);
 }
 
 .form-group {
@@ -359,8 +374,8 @@ nav {
     width: 100%;
     padding: 1rem;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
 }
 
 .form-group textarea {
@@ -370,13 +385,12 @@ nav {
 
 /* Footer */
 footer {
-    background: #2d3748;
-    color: white;
+    background: var(--secondary-color);
+    color: var(--white-color);
     padding: 4rem 2rem 1rem;
 }
 
 .footer-content {
-    max-width: 1400px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -395,7 +409,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: white;
+    color: var(--white-color);
 }
 
 .social-icons {
@@ -405,19 +419,19 @@ footer {
 }
 
 .social-icons a {
-    color: white;
+    color: var(--white-color);
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #4a90e2;
+    color: var(--primary-color);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive Design */
@@ -425,14 +439,16 @@ footer {
     .nav-links {
         display: none;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .contact-container {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
-        grid-template-columns:
+        grid-template-columns: 1fr;
+    }
+}
