@@ -33,10 +33,12 @@ nav {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #2d3748;
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
 }
 
 .nav-links {
@@ -100,7 +102,7 @@ nav {
 /* Buttons */
 .cta-button {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1.25rem 2.5rem; /* Vergroot de button */
     background: #4a90e2;
     color: white;
     text-decoration: none;
