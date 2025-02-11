@@ -234,8 +234,6 @@ nav {
 
 .service-card h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
 }
 
 .service-card ul {
@@ -471,4 +469,8 @@ footer {
     .contact-number {
         display: none; /* Hide contact number on smaller screens */
     }
+}
+
+.service-title {
+    text-align: center;
 }
