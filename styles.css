@@ -38,7 +38,9 @@ nav {
 }
 
 .logo-img {
-    height: 40px;
+    width: 100px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure the image doesn't exceed the parent element's width */
 }
 
 .nav-links {
@@ -403,24 +405,4 @@ footer {
     }
     
     .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .stats {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-}
+        font-size: 2.
