@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website Voorbeeld</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: url('../afbeeldingen/afbeelding1.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Dark overlay */
+        }
+
+        .header * {
+            z-index: 1;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.4em;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* Menu Section Styles */
+        #menu {
+            padding: 50px 0;
+        }
+
+        #menu h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #e44d26;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .menu-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #e44d26;
+        }
+
+        .menu-item p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .menu-item .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* About Section Styles */
+        #about {
+            background-color: #ddd;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        #about p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        #contact p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            font-size: 1.2em;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Restaurant "La Piazza"</h1>
+            <p>Authentieke Italiaanse gerechten met een moderne twist</p>
+        </div>
+
+        <nav class="navbar">
+            <a href="#menu">Menu</a>
+            <a href="#about">Over Ons</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="menu">
+            <h2>Onze Specialiteiten</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="../afbeeldingen/afbeelding1.jpg" alt="Pizza Margherita">
+                    <h3>Pizza Margherita</h3>
+                    <p>De klassieker: tomatensaus, mozzarella en verse basilicum.</p>
+                    <p class="price">€12.99</p >
+                </div>
+                <div class="menu-item">
+                    <img src="../afbeeldingen/afbeelding1.jpg" alt="Pasta Carbonara">
+                    <h3>Pasta Carbonara</h3>
+                    <p>Romige saus met ei, pancetta, pecorino romano en zwarte peper.</p>
+                    <p class="price">€14.50</p >
+                </div>
+                <div class="menu-item">
+                    <img src="../afbeeldingen/afbeelding1.jpg" alt="Tiramisu">
+                    <h3>Tiramisu</h3>
+                    <p>Heerlijke Italiaanse dessert met koffie, mascarpone en cacao.</p>
+                    <p class="price">€7.99</p >
+                </div>
+                <div class="menu-item">
+                    <img src="../afbeeldingen/afbeelding1.jpg" alt="Lasagne">
+                    <h3>Lasagne Bolognese</h3>
+                    <p>Ovenverse lasagne met vleessaus, bechamelsaus en Parmezaanse kaas.</p>
+                    <p class="price">€15.50</p >
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Over Ons</h2>
+            <p>Restaurant "La Piazza" is een familiebedrijf dat al meer dan 20 jaar bestaat. Wij gebruiken alleen de beste ingrediënten en bereiden onze gerechten met liefde en passie. Onze gasten waarderen de authentieke smaak en de gezellige sfeer. Kom langs en ervaar het zelf!</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact & Reserveringen</h2>
+            <p>Reserveer nu uw tafel en geniet van een onvergetelijke avond!</p >
+            <div class="contact-details">
+                <p>Adres: Piazza del Popolo 1, 00100 Rome, Italië</p >
+                <p>Telefoon: +39 06 1234 5678</p >
+                <p>Email: info@lapiazza.it</p >
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Restaurant "La Piazza"</p >
+        </footer>
+    </div>
+</body>
+
+</html>
