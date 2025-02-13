@@ -7,7 +7,7 @@
     <title>SiteStap | Professionele Webontwikkeling</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -245,19 +245,22 @@
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         const modals = document.querySelectorAll('.modal');
         const closeButtons = document.querySelectorAll('.close-button');
+        const header = document.querySelector('.header'); // Select the header
 
         portfolioItems.forEach(item => {
             item.addEventListener('click', () => {
                 const modalId = item.dataset.modal;
                 const modal = document.getElementById(modalId);
-                modal.style.display = "block";
+                modal.classList.add('show');
+                header.classList.add('shrink'); // Add the 'shrink' class to the header
             });
         });
 
         closeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 modals.forEach(modal => {
-                    modal.style.display = "none";
+                    modal.classList.remove('show');
+                    header.classList.remove('shrink'); // Remove the 'shrink' class from the header
                 });
             });
         });
@@ -265,7 +268,8 @@
         window.addEventListener('click', (event) => {
             modals.forEach(modal => {
                 if (event.target == modal) {
-                    modal.style.display = "none";
+                    modal.classList.remove('show');
+                    header.classList.remove('shrink'); // Remove the 'shrink' class from the header
                 }
             });
         });
